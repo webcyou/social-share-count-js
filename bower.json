@@ -1,0 +1,15 @@
+{
+  "name": "social-share-count-js",
+  "version": "0.0.1",
+  "main": "social-share-count.js",
+  "authors": [
+    "daisuke.takayama"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ]
+}
