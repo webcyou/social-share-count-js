@@ -1,0 +1,16 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.DS_Store
+.cache
+Thumbs.db
+*.iml
+*.idea
+
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.log
+
+# Folders to ignore
+bower_components
+node_modules
+.sass-cache

@@ -1,0 +1,49 @@
+{
+  "name": "social-share-count-js",
+  "version": "0.0.1",
+  "description": "Get the social share counts from JavaScript Library",
+  "main": "dist/social-share-count.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:webcyou/social-share-count-js.git"
+  },
+  "author": "daisuke.takayama",
+  "license": "MIT",
+  "dependencies": {
+    "es6-promise": "^4.1.0",
+    "lodash.find": "^4.6.0",
+    "superagent": "^3.5.0",
+    "superagent-jsonp": "^0.1.1"
+  },
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "@types/axios": "^0.14.0",
+    "@types/node": "^7.0.4",
+    "typescript": "^2.1.5",
+    "typings": "^1.3.2",
+    "browser-sync": "^2.18.6",
+    "concurrently": "^3.1.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-run-sequence": "^0.3.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-typescript": "^3.1.5",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.5",
+    "del": "^2.2.2",
+    "tsify": "^3.0.1",
+    "path": "^0.12.7",
+    "run-sequence": "^1.2.2",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
