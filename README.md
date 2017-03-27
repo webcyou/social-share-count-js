@@ -1,6 +1,9 @@
 # Social Share Count js
 Get the social share counts from JavaScript Library
 
+## Demo Page
+[Demo](https://webcyou.github.io/social-share-count-js/)
+
 ## Table of contents
 
 * [Quick start](#quick-start)
