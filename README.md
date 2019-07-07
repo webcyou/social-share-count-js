@@ -83,12 +83,6 @@ Use yahooapis service.
 http://api.pinterest.com/v1/urls/count.json
 ```
 
-**Linkedin**
-
-```
-http://www.linkedin.com/countserv/count/share
-```
-
 **Hatena BookMark**
 ```
 http://api.b.st-hatena.com/entry.count
@@ -109,12 +103,6 @@ http://api.b.st-hatena.com/entry.count
 <p data-sc-tw="URL"></p>
 ```
 
-**Google+**
-
-```html
-<p data-sc-gp="URL"></p>
-```
-
 **Pocket**
 
 ```html
@@ -125,12 +113,6 @@ http://api.b.st-hatena.com/entry.count
 
 ```html
 <p data-sc-pr="URL"></p>
-```
-
-**Linkedin**
-
-```html
-<p data-sc-ln="URL"></p>
 ```
 
 **Hatena BookMark**
