@@ -17,7 +17,7 @@ namespace Model {
       const facebook: Facebook = <Facebook>Social.fromData(data);
 
       facebook.name = 'facebook';
-      facebook.url  = 'https://graph.facebook.com/';
+      facebook.url  = '//graph.facebook.com/';
       facebook.sendData = {
         id: data.url
       };

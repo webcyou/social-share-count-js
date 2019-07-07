@@ -4,7 +4,6 @@ import Facebook  from "./model/Facebook";
 import Twitter   from "./model/Twitter";
 import Feedly    from "./model/Feedly";
 import Pinterest from "./model/Pinterest";
-import Linkedin  from "./model/Linkedin";
 import Hatena    from "./model/Hatena";
 import Pocket    from "./model/Pocket";
 
@@ -31,9 +30,6 @@ namespace SocialShareCountJS {
           break;
         case 'pinterest':
           socialModel = Pinterest.fromData(social);
-          break;
-        case 'linkedin':
-          socialModel = Linkedin.fromData(social);
           break;
         case 'hatena':
           socialModel = Hatena.fromData(social);

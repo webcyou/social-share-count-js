@@ -12,7 +12,7 @@ namespace Model {
       const feedly: Feedly = <Feedly>Social.fromData(data);
 
       feedly.name = 'feedly';
-      feedly.url  = `http://cloud.feedly.com/v3/feeds/feed%2F${encodeURIComponent(data.url)}`;
+      feedly.url  = `//cloud.feedly.com/v3/feeds/feed%2F${encodeURIComponent(data.url)}`;
       feedly.sendData = null;
 
       return feedly;

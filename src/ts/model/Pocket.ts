@@ -17,7 +17,7 @@ namespace Model {
       const pocket: Pocket = <Pocket>Social.fromData(data);
 
       pocket.name = 'pocket';
-      pocket.url  = 'https://widgets.getpocket.com/api/saves';
+      pocket.url  = '//widgets.getpocket.com/api/saves';
       pocket.sendData = {
         url: data.url
       };

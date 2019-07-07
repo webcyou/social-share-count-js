@@ -33,9 +33,6 @@ namespace Model {
     }
 
     public setCount(responseData): void {
-      // console.log(responseData);
-      console.log(this.name);
-
       switch(this.name) {
         case 'facebook':
           this.count = responseData.share ? responseData.share.share_count : 0;
@@ -47,9 +44,6 @@ namespace Model {
           console.log(responseData);
           break;
         case 'pinterest':
-          this.count = responseData.count || 0;
-          break;
-        case 'linkedin':
           this.count = responseData.count || 0;
           break;
         case 'hatena':

@@ -16,7 +16,7 @@ namespace Model {
       const pinterest: Pinterest = <Pinterest>Social.fromData(data);
 
       pinterest.name = 'pinterest';
-      pinterest.url  = 'http://api.pinterest.com/v1/urls/count.json';
+      pinterest.url  = '//api.pinterest.com/v1/urls/count.json';
       pinterest.sendData = {
         url: data.url
       };

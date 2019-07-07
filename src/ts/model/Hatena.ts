@@ -16,7 +16,7 @@ namespace Model {
       const hatena: Hatena = <Hatena>Social.fromData(data);
 
       hatena.name = 'hatena';
-      hatena.url  = 'http://api.b.st-hatena.com/entry.count';
+      hatena.url  = '//api.b.st-hatena.com/entry.count';
       hatena.sendData = {
         url: data.url
       };

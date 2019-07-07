@@ -6000,7 +6000,7 @@ if (typeof (global) !== 'undefined') {
     }
 }
 
-},{"./social_controller":21}],13:[function(require,module,exports){
+},{"./social_controller":20}],13:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -6025,7 +6025,7 @@ var Model;
         Facebook.fromData = function (data) {
             var facebook = Social_1.default.fromData(data);
             facebook.name = 'facebook';
-            facebook.url = 'https://graph.facebook.com/';
+            facebook.url = '//graph.facebook.com/';
             facebook.sendData = {
                 id: data.url
             };
@@ -6037,7 +6037,7 @@ var Model;
 })(Model || (Model = {}));
 exports.default = Model.Facebook;
 
-},{"./Social":19}],14:[function(require,module,exports){
+},{"./Social":18}],14:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -6065,7 +6065,7 @@ var Model;
         Feedly.fromData = function (data) {
             var feedly = Social_1.default.fromData(data);
             feedly.name = 'feedly';
-            feedly.url = "http://cloud.feedly.com/v3/feeds/feed%2F" + encodeURIComponent(data.url);
+            feedly.url = "//cloud.feedly.com/v3/feeds/feed%2F" + encodeURIComponent(data.url);
             feedly.sendData = null;
             return feedly;
         };
@@ -6075,7 +6075,7 @@ var Model;
 })(Model || (Model = {}));
 exports.default = Model.Feedly;
 
-},{"./Social":19}],15:[function(require,module,exports){
+},{"./Social":18}],15:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -6100,7 +6100,7 @@ var Model;
         Hatena.fromData = function (data) {
             var hatena = Social_1.default.fromData(data);
             hatena.name = 'hatena';
-            hatena.url = 'http://api.b.st-hatena.com/entry.count';
+            hatena.url = '//api.b.st-hatena.com/entry.count';
             hatena.sendData = {
                 url: data.url
             };
@@ -6112,44 +6112,7 @@ var Model;
 })(Model || (Model = {}));
 exports.default = Model.Hatena;
 
-},{"./Social":19}],16:[function(require,module,exports){
-"use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-/// <reference path='./Social.ts' />
-var Social_1 = require("./Social");
-var Model;
-(function (Model) {
-    var Linkedin = /** @class */ (function (_super) {
-        __extends(Linkedin, _super);
-        function Linkedin() {
-            return _super !== null && _super.apply(this, arguments) || this;
-        }
-        Linkedin.fromData = function (data) {
-            var linkedin = Social_1.default.fromData(data);
-            linkedin.name = 'linkedin';
-            linkedin.url = 'http://www.linkedin.com/countserv/count/share';
-            linkedin.sendData = {
-                url: data.url
-            };
-            return linkedin;
-        };
-        return Linkedin;
-    }(Social_1.default));
-    Model.Linkedin = Linkedin;
-})(Model || (Model = {}));
-exports.default = Model.Linkedin;
-
-},{"./Social":19}],17:[function(require,module,exports){
+},{"./Social":18}],16:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -6174,7 +6137,7 @@ var Model;
         Pinterest.fromData = function (data) {
             var pinterest = Social_1.default.fromData(data);
             pinterest.name = 'pinterest';
-            pinterest.url = 'http://api.pinterest.com/v1/urls/count.json';
+            pinterest.url = '//api.pinterest.com/v1/urls/count.json';
             pinterest.sendData = {
                 url: data.url
             };
@@ -6186,7 +6149,7 @@ var Model;
 })(Model || (Model = {}));
 exports.default = Model.Pinterest;
 
-},{"./Social":19}],18:[function(require,module,exports){
+},{"./Social":18}],17:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -6211,7 +6174,7 @@ var Model;
         Pocket.fromData = function (data) {
             var pocket = Social_1.default.fromData(data);
             pocket.name = 'pocket';
-            pocket.url = 'https://widgets.getpocket.com/api/saves';
+            pocket.url = '//widgets.getpocket.com/api/saves';
             pocket.sendData = {
                 url: data.url
             };
@@ -6223,7 +6186,7 @@ var Model;
 })(Model || (Model = {}));
 exports.default = Model.Pocket;
 
-},{"./Social":19}],19:[function(require,module,exports){
+},{"./Social":18}],18:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
@@ -6252,8 +6215,6 @@ var Model;
             return new Social(indexNumber++, data.name ? data.name : null, null, data.count ? data.count : 0, data.element ? data.element : null);
         };
         Social.prototype.setCount = function (responseData) {
-            // console.log(responseData);
-            console.log(this.name);
             switch (this.name) {
                 case 'facebook':
                     this.count = responseData.share ? responseData.share.share_count : 0;
@@ -6265,9 +6226,6 @@ var Model;
                     console.log(responseData);
                     break;
                 case 'pinterest':
-                    this.count = responseData.count || 0;
-                    break;
-                case 'linkedin':
                     this.count = responseData.count || 0;
                     break;
                 case 'hatena':
@@ -6285,7 +6243,7 @@ var Model;
 })(Model || (Model = {}));
 exports.default = Model.Social;
 
-},{}],20:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -6322,7 +6280,7 @@ var Model;
 })(Model || (Model = {}));
 exports.default = Model.Twitter;
 
-},{"./Social":19}],21:[function(require,module,exports){
+},{"./Social":18}],20:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var social_model_1 = require("./social_model");
@@ -6384,14 +6342,13 @@ var SocialShareCountJS;
 })(SocialShareCountJS || (SocialShareCountJS = {}));
 exports.default = SocialShareCountJS.Controller;
 
-},{"./social_model":22,"./social_service":23,"./social_view":24,"lodash.find":3}],22:[function(require,module,exports){
+},{"./social_model":21,"./social_service":22,"./social_view":23,"lodash.find":3}],21:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Facebook_1 = require("./model/Facebook");
 var Twitter_1 = require("./model/Twitter");
 var Feedly_1 = require("./model/Feedly");
 var Pinterest_1 = require("./model/Pinterest");
-var Linkedin_1 = require("./model/Linkedin");
 var Hatena_1 = require("./model/Hatena");
 var Pocket_1 = require("./model/Pocket");
 /**
@@ -6418,9 +6375,6 @@ var SocialShareCountJS;
                 case 'pinterest':
                     socialModel = Pinterest_1.default.fromData(social);
                     break;
-                case 'linkedin':
-                    socialModel = Linkedin_1.default.fromData(social);
-                    break;
                 case 'hatena':
                     socialModel = Hatena_1.default.fromData(social);
                     break;
@@ -6439,7 +6393,7 @@ var SocialShareCountJS;
 })(SocialShareCountJS || (SocialShareCountJS = {}));
 exports.default = SocialShareCountJS.SocialCounterModel;
 
-},{"./model/Facebook":13,"./model/Feedly":14,"./model/Hatena":15,"./model/Linkedin":16,"./model/Pinterest":17,"./model/Pocket":18,"./model/Twitter":20}],23:[function(require,module,exports){
+},{"./model/Facebook":13,"./model/Feedly":14,"./model/Hatena":15,"./model/Pinterest":16,"./model/Pocket":17,"./model/Twitter":19}],22:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /// <reference path='./_all.ts' />
@@ -6475,7 +6429,7 @@ var SocialService = /** @class */ (function () {
 }());
 exports.default = SocialService;
 
-},{"es6-promise":2,"superagent":7,"superagent-jsonp":5}],24:[function(require,module,exports){
+},{"es6-promise":2,"superagent":7,"superagent-jsonp":5}],23:[function(require,module,exports){
 "use strict";
 /// <reference path='./_all.ts' />
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -6486,7 +6440,7 @@ var SocialShareCountJS;
 (function (SocialShareCountJS) {
     var socialCountSelectors = [
         '[data-sc-fb]', '[data-sc-tw]', '[data-sc-fd]',
-        '[data-sc-pr]', '[data-sc-ln]', '[data-sc-hb]', '[data-sc-pk]'
+        '[data-sc-pr]', '[data-sc-hb]', '[data-sc-pk]'
     ];
     /**
      * Creates a new SocialCounterView.
@@ -6539,11 +6493,6 @@ var SocialShareCountJS;
                 case '[data-sc-pr]':
                     elements.forEach(function (element) {
                         socialViewList.push(_this.createSocialView('pinterest', element, element.dataset.scPr));
-                    });
-                    break;
-                case '[data-sc-ln]':
-                    elements.forEach(function (element) {
-                        socialViewList.push(_this.createSocialView('linkedin', element, element.dataset.scLn));
                     });
                     break;
                 case '[data-sc-hb]':
