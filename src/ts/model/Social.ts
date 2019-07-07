@@ -40,13 +40,6 @@ namespace Model {
         case 'twitter':
           this.count = responseData.count || 0;
           break;
-        case 'google':
-          if(responseData.shares) {
-            this.count = responseData.shares.google || 0;
-          } else {
-            this.count = responseData.count || 0;
-          }
-          break;
         case 'feedly':
           console.log(responseData);
           break;
