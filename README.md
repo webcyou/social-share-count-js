@@ -70,21 +70,6 @@ Use [count.jsoon](https://jsoon.digitiminimi.com/)service.
 Registration of count.jsoon service is mandatory.
 
 
-**Google+**
-```
-https://count.donreach.com/
-```
-Use [donreach](https://count.donreach.com/)service.
-
-
-Set Google API KEY (POST)
-```
-https://clients6.google.com/rpc
-```
-```
-Deprecated as the keys are exposed.
-```
-
 **Pocket**
 
 ```

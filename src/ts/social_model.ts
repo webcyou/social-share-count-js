@@ -2,7 +2,6 @@
 import Social    from "./model/Social";
 import Facebook  from "./model/Facebook";
 import Twitter   from "./model/Twitter";
-import Google    from "./model/Google";
 import Feedly    from "./model/Feedly";
 import Pinterest from "./model/Pinterest";
 import Linkedin  from "./model/Linkedin";
@@ -26,13 +25,6 @@ namespace SocialShareCountJS {
           break;
         case 'twitter':
           socialModel = Twitter.fromData(social);
-          break;
-        case 'google':
-          if(this.option && this.option.google_key) {
-            socialModel = Google.fromData(social, this.option.google_key);
-          } else {
-            socialModel = Google.fromData(social);
-          }
           break;
         case 'feedly':
           socialModel = Feedly.fromData(social);

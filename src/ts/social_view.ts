@@ -5,7 +5,7 @@
  **/
 namespace SocialShareCountJS {
   const socialCountSelectors: string[] = [
-    '[data-sc-fb]', '[data-sc-tw]', '[data-sc-gp]', '[data-sc-fd]',
+    '[data-sc-fb]', '[data-sc-tw]', '[data-sc-fd]',
     '[data-sc-pr]', '[data-sc-ln]', '[data-sc-hb]', '[data-sc-pk]'
   ];
 
@@ -58,11 +58,6 @@ namespace SocialShareCountJS {
         case '[data-sc-tw]':
           elements.forEach((element) => {
             socialViewList.push(this.createSocialView('twitter', element, element.dataset.scTw));
-          });
-          break;
-        case '[data-sc-gp]':
-          elements.forEach((element) => {
-            socialViewList.push(this.createSocialView('google', element, element.dataset.scGp));
           });
           break;
         case '[data-sc-fd]':
