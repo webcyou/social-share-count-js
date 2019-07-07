@@ -25,8 +25,4 @@ export default class SocialService {
       });
     });
   }
-
-  private isGoogleKey(sendData): boolean {
-    return Array.isArray(sendData);
-  }
 }
