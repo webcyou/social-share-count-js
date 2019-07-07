@@ -6,9 +6,7 @@ import Social from "./Social";
  * Service URL: https://getpocket.com/
  **/
 interface PocketData {
-  q: string;
-  format: string;
-  env: string;
+  url: string;
 }
 
 namespace Model {
@@ -19,12 +17,9 @@ namespace Model {
       const pocket: Pocket = <Pocket>Social.fromData(data);
 
       pocket.name = 'pocket';
-      pocket.url  = 'https://query.yahooapis.com/v1/public/yql';
+      pocket.url  = 'https://widgets.getpocket.com/api/saves';
       pocket.sendData = {
-        q: `SELECT content FROM data.headers WHERE url=
-            'https://widgets.getpocket.com/v1/button?label=pocket&count=vertical&v=1&url=${data.url}&src=${data.url}'`,
-        format: 'xml',
-        env: 'store://datatables.org/alltableswithkeys'
+        url: data.url
       };
 
       return pocket;

@@ -6211,11 +6211,9 @@ var Model;
         Pocket.fromData = function (data) {
             var pocket = Social_1.default.fromData(data);
             pocket.name = 'pocket';
-            pocket.url = 'https://query.yahooapis.com/v1/public/yql';
+            pocket.url = 'https://widgets.getpocket.com/api/saves';
             pocket.sendData = {
-                q: "SELECT content FROM data.headers WHERE url=\n            'https://widgets.getpocket.com/v1/button?label=pocket&count=vertical&v=1&url=" + data.url + "&src=" + data.url + "'",
-                format: 'xml',
-                env: 'store://datatables.org/alltableswithkeys'
+                url: data.url
             };
             return pocket;
         };
@@ -6254,20 +6252,14 @@ var Model;
             return new Social(indexNumber++, data.name ? data.name : null, null, data.count ? data.count : 0, data.element ? data.element : null);
         };
         Social.prototype.setCount = function (responseData) {
+            // console.log(responseData);
+            console.log(this.name);
             switch (this.name) {
                 case 'facebook':
                     this.count = responseData.share ? responseData.share.share_count : 0;
                     break;
                 case 'twitter':
                     this.count = responseData.count || 0;
-                    break;
-                case 'google':
-                    if (responseData.shares) {
-                        this.count = responseData.shares.google || 0;
-                    }
-                    else {
-                        this.count = responseData.count || 0;
-                    }
                     break;
                 case 'feedly':
                     console.log(responseData);
@@ -6282,11 +6274,8 @@ var Model;
                     this.count = responseData || 0;
                     break;
                 case 'pocket':
-                    if (responseData.results) {
-                        var content = responseData.results.toString();
-                        var match = content.match(/&lt;em id="cnt"&gt;(\d+)&lt;\/em&gt;/i);
-                        this.count = match !== null ? Number(match[1]) : 0;
-                    }
+                    console.log(responseData);
+                    this.count = responseData.saves || 0;
                     break;
             }
         };
@@ -6481,9 +6470,6 @@ var SocialService = /** @class */ (function () {
                 }
             });
         });
-    };
-    SocialService.prototype.isGoogleKey = function (sendData) {
-        return Array.isArray(sendData);
     };
     return SocialService;
 }());

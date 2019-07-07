@@ -33,6 +33,9 @@ namespace Model {
     }
 
     public setCount(responseData): void {
+      // console.log(responseData);
+      console.log(this.name);
+
       switch(this.name) {
         case 'facebook':
           this.count = responseData.share ? responseData.share.share_count : 0;
@@ -53,12 +56,8 @@ namespace Model {
           this.count = responseData || 0;
           break;
         case 'pocket':
-          if (responseData.results) {
-            let content = responseData.results.toString();
-            let match   = content.match(/&lt;em id="cnt"&gt;(\d+)&lt;\/em&gt;/i);
-
-            this.count = match !== null ? Number(match[1]) : 0;
-          }
+          console.log(responseData);
+          this.count = responseData.saves || 0;
           break;
       }
     }
