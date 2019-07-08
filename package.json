@@ -1,6 +1,6 @@
 {
   "name": "social-share-count-js",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Get the social share counts from JavaScript Library",
   "main": "dist/social-share-count.js",
   "scripts": {
